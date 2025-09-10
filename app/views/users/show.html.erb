@@ -1,0 +1,20 @@
+<h1><%= @user.email%>'s Profile</h1>
+
+<h2>Events created by <%= @user.email%>:</h2>
+
+<% @user.created_events.each do |event|%>
+    <p>Date: <%=event.date%><p>
+    <p>Name: <%=event.name%><p>
+<%end%>
+
+<h2>Events attended by <%= @user.email%>:</h2>
+<% @user.attended_events.past.each do |event|%>
+    <p>Date: <%=event.date%><p>
+    <p>Name: <%=event.name%><p>
+<%end%>
+
+<h2>Events to be attended by <%= @user.email%>:</h2>
+<% @user.attended_events.upcoming.each do |event|%>
+    <p>Date: <%=event.date%><p>
+    <p>Name: <%=event.name%><p>
+<%end%>

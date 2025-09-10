@@ -1,6 +1,7 @@
 <h1>Events</h1>
 <% if user_signed_in? %>
     <%= button_to "Create Event", new_event_path, method: :get%>
+    <%= button_to "My Profile", user_path(current_user)%>
 <% end %>
 
 

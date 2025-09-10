@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "user/show"
+  resources :users, only: [ :show ]
   devise_for :users
   resources :events do
     resources :event_attendances, only: [ :create, :destroy ]
